@@ -1,7 +1,10 @@
 #! python3
+# Using datatypes - lists, sets, dictionary
 
-# Python list data structure exercises.
 
+##################################
+############## LISTS ##############
+##################################
 ##############
 # List Queues
 ##############
@@ -30,10 +33,11 @@
 # List comprehensions
 ##############
 
-# txt = '''Eight dollars a week or a million a year - whats the difference? A mathematician or a wit would give
-#         you the wrong answer. The magi brought valuable gifts, but that was not among them. - The gift of maji O'Henry.'''
+# txt = '''Eight dollars a week or a million a year - whats the difference? A mathematician or a wit would give you
+# the wrong answer. The magi brought valuable gifts, but that was not among them. - The gift of maji O'Henry.'''
 #
-# word_lists = [[w.replace(',' , '') for w in line.split() if w not in ['-']] for line in txt.replace('?', '.').split('.')]
+# word_lists = [[w.replace(',' , '') for w in line.split() if w not in ['-']] for line in txt.replace('?',
+# '.').split('.')]
 # print(word_lists)
 
 ##############
@@ -55,7 +59,6 @@
 #         while stk:
 #             chunk = stk.pop() + ' ' + chunk
 #         print(chunk.strip())
-
 
 
 ##############
@@ -86,32 +89,58 @@
 #         while stk:
 #             chunk = stk.pop() + ' ' + chunk
 #         print(chunk.strip())
+#
+# task_list = ['pay bills', 'tidy up', 'walk the dog', 'go to pharmacy', 'cook dinner']
+# task_tm = ['8:00', '8:30', '9:00', '10:00', '10:30']
+#
+# sched_list = [(tm, task) for tm, task in zip(task_tm, task_list)]
+# print(type(sched_list))
+# print(sched_list[1][0])
+# print(sched_list[1][1])
 
+##################################
+############## SETS ##############
+##################################
 
+##############
+# Removing duplicates from sets
+##############
 
+# lst = ['john silver', 'tim jemison', 'john silver', 'maya smith']
+# lst = list(set(lst))
+# print(lst)
 
+##############
+# Set intersections - combining similarities in elements of sets
+##############
 
+# photo1_tags = {'coffee', 'table', 'drinks', 'breakfast', 'tableware', 'cup', 'food'}
+# photo2_tags = {'food', 'dish', 'meat', 'meal', 'tableware', 'dinner', 'vegetable'}
+#
+# intersection = photo1_tags.intersection(photo2_tags)
+# if len(intersection) >= 2:
+#     print('These tags are common ', intersection)
 
+########################################
+############## DICTIONARY ##############
+########################################
 
+##############
+# Counting number of occurrences within a text phrase using a dictionary
+##############
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# txt = '''python is one of the most promising programming languages today. Due to the simplicity of the python syntax,
+#             many researches and scientists prefer python over many other languages.'''
+#
+# # Replace punctuation with '' (space)
+# txt = txt.replace(',', '').replace('.', '')
+# lst = txt.split()
+# print(lst)
+#
+# #  Count the occurrences
+# dct = {}
+# for w in lst:
+#     c = dct.setdefault(w, 0)
+#     dct[w] += 1
+# dct_sorted = dict(sorted(dct.items(), key=lambda x: x[1], reverse=True))
+# print(dct_sorted)
